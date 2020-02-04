@@ -1,1 +1,2 @@
-# riddick_a-chat_app
+# Chat App
+Multimedia Authoring: Week 5 - Feb 4 2020
