@@ -1,3 +1,7 @@
+// imports
+
+@import '../_vars';
+
 .new-message { 
     span { font-size: 0.8rem; display: block; margin-bottom: 2px; }
 
@@ -13,6 +17,18 @@
 
 .my-message {
     float: right !important;
-    background-color: #86bf9d;
+    background-color: #0076fd;
     color: white;
+}
+
+.typing {
+    span { font-size: 0.8rem; display: block; margin-bottom: 2px; }
+    width: 20%;
+    padding: 8px 12px;
+    background-color: yellow; 
+    border-radius: 8px;
+    margin-bottom: 1rem;
+
+    float: bottom;
+    clear: both;
 }
