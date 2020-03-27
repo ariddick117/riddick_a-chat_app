@@ -24,22 +24,39 @@ const vm = new Vue({
         socketID: "",
         messages: [],
         message: "",
-        nickName: ""
+        nickname: "",
+        isHidden: false
     },
 
     methods: {
-        dispatchMessage() {
+        addUsername() {
+            console.log('Your username has been successfully set'); // || console.log('Did not work');
+        },
+
+        showMessage() {
             // emit a message event and send message to the server
-            console.log('handle send message');
+            //console.log('handle send message');
 
             socket.emit('chat_message', { 
                 content: this.message,
-                name: this.nickName || "anonymous" 
+                name: this.nickname || "anonymous" 
                 // || is called a double pipe operator or an "or" operator
-                // if this.nickName is set, use that value or just make the name "anonymous"
+                // if this.nickname is set, use that value or just make the name "anonymous"
             })
 
             this.message = "";
+        },
+
+        created() {
+            // shows the user typing
+            socket.on('typing', (data) => {
+                this.typing = data;
+            });
+
+
+            socket.on('stopTyping', () => {
+                this.typing = false;
+            });
         }
     },
 

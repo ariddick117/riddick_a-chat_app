@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>Socket IO Chat with Node!</title>
@@ -10,14 +9,23 @@
 
 <body>
 	<main id="app">
-		<section class="form-container">
-			<label for="nickname">Your Nickname (optional)</label>
-			<input type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
+		<section id="loginLightbox" v-if="!isHidden">
+			<section class="lb-content">
+				<h1>Welcome!</h1>
+				<h3>Welcome to your new favourite way to communicate due to the viral pandemic! Stay safe, wash your hands, and chat away!</h3>
 
+				<!-- <label for="nickname">Nickname</label> -->
+				<input v-model="nickname" type="text" id="nickname" class="nickname" placeholder="What Should We Call You?">
+				<input @click="addUsername" v-on:click="isHidden=true" id="usernameSubmit" type="submit">
+			</section>
+		</section>
+
+		<section class="form-container">
+			<h2 class="hidden">Messaging Section</h2>
 			<form>
-				<label for="message">Something to say?</label>
+				<label for="message">What Would You Like to Say?</label>
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
-				<input @click.prevent="dispatchMessage" type="submit">
+				<input @click.prevent="showMessage" type="submit">
 			</form>
 		</section>
 
