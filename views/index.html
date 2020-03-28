@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Socket IO Chat with Node!</title>
+
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" href="css/main.css">
+
 	<script src="https://unpkg.com/vue"></script>
 </head>
 
@@ -22,11 +26,16 @@
 
 		<section class="form-container">
 			<h2 class="hidden">Messaging Section</h2>
+			<img class="logo-header" src="../images/logo.svg" alt="CoronaCHAT Logo">
 			<form>
 				<label for="message">What Would You Like to Say?</label>
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				<input @click.prevent="showMessage" type="submit">
 			</form>
+			<!-- <br>
+			<br>
+			<h2>Online Users</h2>
+			<h3>{{socket.id}}</h3> -->
 		</section>
 
 		<section class="messages">

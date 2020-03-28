@@ -23,16 +23,20 @@ main {
 
 .form-container { 
 	flex: 1; 
-	border: 6px solid #bfcfd6;
-	background-color: #e3edf1;
+	border: 6px solid $main-green;
+	background-color: $drk-blue;
 
-	label { display: block; margin-bottom: 0.5rem; }
+	label {
+		display: block; 
+		margin-bottom: 0.5rem;
+		color: white; 
+	}
 }
 
 .messages { 
 	flex: 2;
 	background-color: #343636;
-	border: 6px solid #000000; 
+	border: 6px solid #343636; 
 }
 
 input, textarea { 
@@ -50,6 +54,11 @@ textarea { height: 235px; }
 
 .hidden {
 	display: none;
+}
+
+.logo-header {
+	width: 75%;
+	padding-bottom: 40px;
 }
 
 
